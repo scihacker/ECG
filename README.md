@@ -1,0 +1,3 @@
+# Statistical Learning Project: ECG data processing
+Planning to use PCA + SVM and Reduced Rank LDA to learn the model.<br>
+Still Working...
