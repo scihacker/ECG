@@ -10,12 +10,15 @@ for i = 1 : size(directory, 1)
     sub_dir = dir(['./data/' directory(i).name '/*.mat']);
     if (~isempty(sub_dir))
         type_code = type_code + 1;
+    else
+        continue;
     end
+    tmp = {};
     for j = 1 : size(sub_dir, 1)
         data = load(['./data/' directory(i).name '/' sub_dir(j).name]);
         data = data.Beats;
-        data.type = type_code;
-        list{end + 1} = data;
+        tmp{end + 1} = data;
     end
+    list{type_code} = tmp;
 end
 end
