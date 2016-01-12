@@ -8,14 +8,14 @@ for i = 1 : numel(test_data)
             result = zeros(numel(svm_models), 1);
             new_vec = [];
             if channel == 0
-                for c = 1 : 12
-                    piece = zeros(size(Eig_vecs, 1), 1);
+                for c = 1: 12%[1 2 3 4 5 6 7 10 11 12]
+                    piece = zeros(size(Eig_vecs{c}, 1), 1);
                     temp = beat_data{k}(:, c);
                     piece(1:min(size(piece), numel(temp))) = temp(1:min(size(piece), numel(temp)));
                     % piece = piece - mean(piece);
                     % piece = piece / std(piece, 1);
-                    piece = piece - average;
-                    new_vec = [new_vec;Eig_vecs' * piece];
+                    piece = piece - average{c};
+                    new_vec = [new_vec;Eig_vecs{c}' * piece];
                 end
             else
                 piece = zeros(size(Eig_vecs, 1), 1);
