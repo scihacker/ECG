@@ -27,6 +27,6 @@ else
         X(i, 1 : numel(lst{i}{1}(:, channel))) = lst{i}{1}(:, channel);
     end
 end
-% X = X - repmat(mean(X, 2), 1, size(X, 2));
-% X = X ./ repmat(std(X, 1, 2), 1, size(X, 2));
+X = X - repmat(mean(X, 2), 1, size(X, 2));
+X = X ./ repmat(std(X, 1, 2), 1, size(X, 2));
 end

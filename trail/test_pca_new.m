@@ -1,6 +1,7 @@
 data = load_from_file();
 data = pre_process(data);
 [train, test] = data_division(data, 9);
+train{4}(10:45) = [];
 final = [];
 Eig_vecs = {};
 averages = {};
