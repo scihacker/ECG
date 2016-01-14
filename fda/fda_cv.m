@@ -14,7 +14,7 @@ for k = 1 : 10
         final = [final res];
         Eig_vecs{end + 1} = V;
     end
-    [prior, u, sigma] = qda(final, y);
+    [prior, u, sigma] = lda(final, y);
 
     percentage = percentage + test_fda_all(test, Eig_vecs, prior, u, sigma);
 end

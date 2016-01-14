@@ -3,7 +3,7 @@ addpath('../common/');
 data = load_from_file();
 data = pre_process(data);
 percentage = 0;
-for i = 1 : 1
+for i = 1 : 10
     [train, test] = data_division(data, i);
     [X, y] = data_load(train, 1);
     models = train_svm(X, y');
