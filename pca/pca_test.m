@@ -12,8 +12,8 @@ for i = 1 : numel(test_data)
                     piece = zeros(size(Eig_vecs{c}, 1), 1);
                     temp = beat_data{k}(:, c);
                     piece(1:min(size(piece), numel(temp))) = temp(1:min(size(piece), numel(temp)));
-                    piece = piece - mean(piece);
-                    piece = piece / std(piece, 1);
+                    % piece = piece - mean(piece);
+                    % piece = piece / std(piece, 1);
                     piece = piece - average{c};
                     new_vec = [new_vec;Eig_vecs{c}' * piece];
                 end
@@ -21,8 +21,8 @@ for i = 1 : numel(test_data)
                 piece = zeros(size(Eig_vecs, 1), 1);
                 temp = beat_data{k}(:, channel);
                 piece(1:min(size(piece), numel(temp))) = temp(1:min(size(piece), numel(temp)));
-                piece = piece - mean(piece);
-                piece = piece / std(piece, 1);
+                % piece = piece - mean(piece);
+                % piece = piece / std(piece, 1);
                 piece = piece - average;
                 new_vec = Eig_vecs' * piece;
             end
