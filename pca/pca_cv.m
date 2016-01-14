@@ -6,7 +6,7 @@ for j = [1 2 5 10 20 50 100]
     percentage = 0;
     for i = 1 : 10
         [train, test] = data_division(data, i);
-        [X, y] = pca_data_load(train, 1);
+        [X, y] = data_load(train, 1);
         [res, Eig_vecs, average] = pca_cont(X, j);
         rank = prd(X', Eig_vecs, j);
         disp(['The PRD of the subspace is ' num2str(rank) '.']);
