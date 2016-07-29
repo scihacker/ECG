@@ -1,7 +1,4 @@
-/data
 /libsvm
 *.mex
 /
-/images
 *.rar
-*.docx
